@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Line Graph</title>
+    <!-- Include ApexCharts CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body>
+
+<h2>Student Marks Line Graph</h2>
+<div id="chart"></div>
+
+<script>
+    // Define the data for student marks
+    const options = {
+        chart: {
+            type: 'line',
+            height: 400
+        },
+        series: [{
+            name: 'Marks',
+            data: [85, 78, 92, 65, 74, 88] // Marks for each student
+        }],
+        xaxis: {
+            categories: ['Student 1', 'Student 2', 'Student 3', 'Student 4', 'Student 5', 'Student 6'] // Student names or labels
+        },
+        title: {
+            text: 'Student Marks',
+            align: 'center'
+        },
+        stroke: {
+            curve: 'smooth' // Makes the line smooth
+        },
+        colors: ['#FF5733']
+    };
+
+    // Render the chart
+    const chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+</script>
+
+</body>
+</html>
